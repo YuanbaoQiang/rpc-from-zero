@@ -1,4 +1,4 @@
-package github.yuanbaoqiang.remoting.socket;
+package github.yuanbaoqiang.remoting.transport.socket;
 
 import github.yuanbaoqiang.entity.Message;
 import org.slf4j.Logger;
@@ -29,7 +29,7 @@ public class HelloClient {
             return objectInputStream.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
-            logger.error("error happened:" + e);
+            logger.error("error happened: " + e);
         }
         return null;
     }
