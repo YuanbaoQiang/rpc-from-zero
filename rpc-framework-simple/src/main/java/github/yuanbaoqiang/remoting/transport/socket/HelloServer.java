@@ -1,4 +1,4 @@
-package github.yuanbaoqiang.remoting.socket;
+package github.yuanbaoqiang.remoting.transport.socket;
 
 import github.yuanbaoqiang.entity.Message;
 import org.slf4j.Logger;
