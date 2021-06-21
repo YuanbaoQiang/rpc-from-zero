@@ -1,6 +1,6 @@
 package github.yuanbaoqiang.remoting.transport.netty.kyro.client;
 
-import github.yuanbaoqiang.entity.RpcResponse;
+import github.yuanbaoqiang.dto.RpcResponse;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.AttributeKey;

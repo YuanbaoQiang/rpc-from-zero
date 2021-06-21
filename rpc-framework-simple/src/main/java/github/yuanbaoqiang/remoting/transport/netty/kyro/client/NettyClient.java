@@ -1,8 +1,8 @@
 package github.yuanbaoqiang.remoting.transport.netty.kyro.client;
 
 
-import github.yuanbaoqiang.entity.RpcRequest;
-import github.yuanbaoqiang.entity.RpcResponse;
+import github.yuanbaoqiang.dto.RpcRequest;
+import github.yuanbaoqiang.dto.RpcResponse;
 import github.yuanbaoqiang.remoting.transport.netty.kyro.endec.NettyKryoDecoder;
 import github.yuanbaoqiang.remoting.transport.netty.kyro.endec.NettyKryoEncoder;
 import github.yuanbaoqiang.remoting.transport.netty.kyro.serialize.KryoSerializer;

@@ -1,4 +1,4 @@
-package github.yuanbaoqiang.entity;
+package github.yuanbaoqiang.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

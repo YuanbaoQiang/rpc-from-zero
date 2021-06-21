@@ -11,6 +11,7 @@
     <modules>
         <module>rpc-framework-common</module>
         <module>rpc-framework-simple</module>
+        <module>test-socket-communication</module>
     </modules>
 
     <properties>
