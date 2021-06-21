@@ -29,7 +29,7 @@ public class HelloClient {
             return objectInputStream.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
-            logger.error("error happened:" + e);
+            logger.error("error happened: " + e);
         }
         return null;
     }

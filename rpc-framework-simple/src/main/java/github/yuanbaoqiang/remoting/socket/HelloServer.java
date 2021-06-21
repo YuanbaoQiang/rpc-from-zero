@@ -43,7 +43,7 @@ public class HelloServer {
                     objectOutputStream.flush();
 
                 } catch (IOException | ClassNotFoundException e) {
-                    logger.error("error happened:" + e);
+                    logger.error("error happened: " + e);
                 }
             }
         } catch (IOException e) {
