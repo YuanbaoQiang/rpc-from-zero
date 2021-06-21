@@ -1,5 +1,6 @@
 package github.yuanbaoqiang.remoting.transport.netty.kyro.serialize;
 
+
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
