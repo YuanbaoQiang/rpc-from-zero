@@ -1,5 +1,6 @@
 package github.yuanbaoqiang.remoting.socket;
 
+import github.yuanbaoqiang.entity.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,9 +10,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * @program: yuanbaoqiang-toy-rpc
  * @description: 客户端socket测试类
- * @author: YuanbaoQiang
+ * @author: YuanbaoQiang-ctrip
  * @create: 2021-06-20 22:48
  */
 public class HelloClient {
