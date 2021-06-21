@@ -1,4 +1,4 @@
-package github.yuanbaoqiang.remoting.socket;
+package github.yuanbaoqiang.remoting.transport.socket;
 
 /**
  * @description: 这是另外一台电脑的git测试类
