@@ -36,7 +36,7 @@ public class HelloClient {
 
     public static void main(String[] args) {
         HelloClient helloClient = new HelloClient();
-        Message message = (Message) helloClient.send(new Message("this is the message from client"), "127.0.0.1", 1234);
+        Message message = (Message) helloClient.send(new Message("this is the message from client"), "127.0.0.1", 6789);
         System.out.println("client receive message: " + message.getContent());
     }
 
