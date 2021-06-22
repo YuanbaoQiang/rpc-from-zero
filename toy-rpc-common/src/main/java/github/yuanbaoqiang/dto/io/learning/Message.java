@@ -1,4 +1,4 @@
-package github.yuanbaoqiang.dto;
+package github.yuanbaoqiang.dto.io.learning;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
