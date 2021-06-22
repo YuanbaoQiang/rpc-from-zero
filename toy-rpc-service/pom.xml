@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>toy-rpc-main</artifactId>
+    <artifactId>toy-rpc-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -21,21 +21,6 @@
             <groupId>github.yuanbaoqiang</groupId>
             <artifactId>toy-rpc-common</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>github.yuanbaoqiang</groupId>
-            <artifactId>toy-rpc-service</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.esotericsoftware</groupId>
-            <artifactId>kryo</artifactId>
-            <version>${kryo.version}</version>
         </dependency>
     </dependencies>
 

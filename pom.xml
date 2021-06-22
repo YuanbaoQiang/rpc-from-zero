@@ -12,6 +12,7 @@
         <module>toy-rpc-common</module>
         <module>toy-rpc-io-learning</module>
         <module>toy-rpc-main</module>
+        <module>toy-rpc-service</module>
     </modules>
 
     <properties>
