@@ -1,7 +1,7 @@
 package github.yuanbaoqiang.remoting.transport.netty.kyro.server;
 
-import github.yuanbaoqiang.dto.RpcRequest;
-import github.yuanbaoqiang.dto.RpcResponse;
+import github.yuanbaoqiang.dto.io.learning.RpcRequest;
+import github.yuanbaoqiang.dto.io.learning.RpcResponse;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;

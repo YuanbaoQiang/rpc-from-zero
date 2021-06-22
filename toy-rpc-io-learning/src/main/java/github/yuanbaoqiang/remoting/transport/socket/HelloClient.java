@@ -1,6 +1,6 @@
 package github.yuanbaoqiang.remoting.transport.socket;
 
-import github.yuanbaoqiang.dto.Message;
+import github.yuanbaoqiang.dto.io.learning.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
