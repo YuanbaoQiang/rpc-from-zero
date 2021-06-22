@@ -9,4 +9,7 @@ import github.yuanbaoqiang.dto.User;
  */
 public interface UserService {
     User queryUserById(int id);
+
+    // 添加一个插入数据的方法
+    Integer inserUser(User user);
 }

@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
                 .build();
         return user;
     }
+
+    @Override
+    public Integer inserUser(User user) {
+        return 1;
+    }
 }
