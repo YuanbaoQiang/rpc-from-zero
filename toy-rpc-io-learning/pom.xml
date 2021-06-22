@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rpc-framework-simple</artifactId>
+    <artifactId>toy-rpc-io-learning</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>github.yuanbaoqiang</groupId>
-            <artifactId>rpc-framework-common</artifactId>
+            <artifactId>toy-rpc-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
