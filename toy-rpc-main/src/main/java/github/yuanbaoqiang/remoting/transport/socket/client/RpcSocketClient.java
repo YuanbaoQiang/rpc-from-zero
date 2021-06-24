@@ -4,7 +4,6 @@ import github.yuanbaoqiang.dto.RpcRequest;
 import github.yuanbaoqiang.dto.RpcResponse;
 import github.yuanbaoqiang.dto.User;
 import github.yuanbaoqiang.remoting.transport.socket.proxy.jdk.ClientProxy;
-import github.yuanbaoqiang.remoting.transport.socket.proxy.jdk.JDKProxyFactory;
 import github.yuanbaoqiang.service.UserService;
 
 import java.io.IOException;
@@ -39,14 +38,9 @@ public class RpcSocketClient {
 
     public static void main(String[] args) {
         ClientProxy clientProxy = new ClientProxy("127.0.0.1", 8879);
+        // 获取对应服务的代理类
         UserService proxyInstance = clientProxy.getProxyInstance(UserService.class);
-
-        UserService proxyInstance1 = JDKProxyFactory.getProxyInstance(UserService.class);
-//        User user = proxyInstance.queryUserById(10);
-//        System.out.println(user);
-//        System.out.println(jdkProxyFactory);
-//        UserService proxyInstance = jdkProxyFactory.getProxyInstance(UserService.class);
-        // 此时proxyInstance调用queryUserById方法的时候，其实就是调用invoke方法的过程
-//        User user = proxyInstance.queryUserById(10);
+        // 代理类调用方法
+        User user = proxyInstance.queryUserById(10);
     }
 }
