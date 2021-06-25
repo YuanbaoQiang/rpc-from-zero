@@ -12,7 +12,7 @@
 
 该模块为项目运行过程中所需要的类，工具方法等。
 
-`github.yuanbaoqiang.dto`：包含所有的传输实体类
+`github.yuanbaoqiang.remoting.dto`：包含所有的传输实体类
 
 # toy-rpc-main
 

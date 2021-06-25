@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>github.yuanbaoqiang</groupId>
-            <artifactId>toy-rpc-common</artifactId>
+            <artifactId>toy-rpc-main</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

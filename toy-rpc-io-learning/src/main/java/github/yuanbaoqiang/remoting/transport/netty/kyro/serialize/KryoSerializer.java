@@ -4,8 +4,8 @@ package github.yuanbaoqiang.remoting.transport.netty.kyro.serialize;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import github.yuanbaoqiang.dto.io.learning.RpcRequest;
-import github.yuanbaoqiang.dto.io.learning.RpcResponse;
+import github.yuanbaoqiang.remoting.dto.io.learning.RpcRequest;
+import github.yuanbaoqiang.remoting.dto.io.learning.RpcResponse;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
