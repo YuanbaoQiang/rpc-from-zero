@@ -1,5 +1,7 @@
 package github.yuanbaoqiang.remoting.transport.register;
 
+import github.yuanbaoqiang.remoting.transport.loadbalance.LoadBalance;
+import github.yuanbaoqiang.remoting.transport.loadbalance.RandomLoadBalance;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -22,6 +24,8 @@ public class ZKServiceRegister implements ServiceRegister{
     // zookeeper根路径节点
     private static final String ROOT_PATH = "MyRpc";
     private static final Logger logger = LoggerFactory.getLogger(ZKServiceRegister.class);
+    // 初始化负载均衡器， 这里用的是随机， 一般通过构造函数传入
+    private LoadBalance loadBalance = new RandomLoadBalance();
 
     public ZKServiceRegister(){
         // 指数时间重试
@@ -53,10 +57,16 @@ public class ZKServiceRegister implements ServiceRegister{
     @Override
     public InetSocketAddress serviceDiscovery(String serviceName) {
         try {
+//            List<String> strings = client.getChildren().forPath("/" + serviceName);
+//            // 默认使用第一个
+//            String str = strings.get(0);
+//            return parseAddress(str);
+
+            logger.error("采用随机负载均衡算法...");
             List<String> strings = client.getChildren().forPath("/" + serviceName);
-            // 默认使用第一个
-            String str = strings.get(0);
-            return parseAddress(str);
+            // 负载均衡选择器，选择一个
+            String string = loadBalance.balance(strings);
+            return parseAddress(string);
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("列表为空...");
