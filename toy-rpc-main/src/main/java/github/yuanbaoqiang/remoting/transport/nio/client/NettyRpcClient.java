@@ -1,10 +1,11 @@
 package github.yuanbaoqiang.remoting.transport.nio.client;
 
 
-
 import github.yuanbaoqiang.remoting.dto.RpcRequest;
 import github.yuanbaoqiang.remoting.dto.RpcResponse;
 import github.yuanbaoqiang.remoting.transport.common.RpcClient;
+import github.yuanbaoqiang.remoting.transport.register.ServiceRegister;
+import github.yuanbaoqiang.remoting.transport.register.ZKServiceRegister;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -14,6 +15,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.AttributeKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.InetSocketAddress;
 
 /**
  * @description: 基于Netty的客户端
@@ -26,10 +29,17 @@ public class NettyRpcClient implements RpcClient {
     private static final EventLoopGroup eventLoopGroup;
     private String host;
     private int port;
+    private ServiceRegister serviceRegister;
 
     public NettyRpcClient(String host, int port){
         this.host = host;
         this.port = port;
+
+    }
+
+    public NettyRpcClient(){
+        // 初始化注册中心，建立连接
+        this.serviceRegister = new ZKServiceRegister();
     }
 
     // netty客户端初始化，重复使用
@@ -43,6 +53,10 @@ public class NettyRpcClient implements RpcClient {
 
     @Override
     public RpcResponse sendMessage(RpcRequest rpcRequest) {
+        InetSocketAddress address = serviceRegister.serviceDiscovery(rpcRequest.getInterfaceName());
+        String host = address.getHostName();
+        int port = address.getPort();
+
         try {
             ChannelFuture channelFuture  = bootstrap.connect(host, port).sync();
             Channel channel = channelFuture.channel();
