@@ -31,6 +31,8 @@
         <!-- protostuff -->
         <protostuff.version>1.7.2</protostuff.version>
         <testng.version>7.4.0</testng.version>
+        <fastjson.vertion>1.2.76</fastjson.vertion>
+        <curator.version>5.1.0</curator.version>
     </properties>
 
     <dependencies>
@@ -80,6 +82,19 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.vertion}</version>
+        </dependency>
+
+        <!--这个jar包应该依赖log4j,不引入log4j会有控制台会有warn，但不影响正常使用-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

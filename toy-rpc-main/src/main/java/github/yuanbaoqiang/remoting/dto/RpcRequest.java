@@ -1,5 +1,6 @@
 package github.yuanbaoqiang.remoting.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,6 +15,7 @@ import java.io.Serializable;
  */
 @Builder
 @Data
+@AllArgsConstructor
 public class RpcRequest implements Serializable {
     // 接口名，客户端只知道接口名称，服务端根据接口名寻找对于的实现类
     private String interfaceName;
