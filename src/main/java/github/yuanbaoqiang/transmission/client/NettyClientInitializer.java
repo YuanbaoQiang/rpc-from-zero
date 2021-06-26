@@ -1,9 +1,9 @@
-package github.yuanbaoqiang.remoting.transport.nio.client;
+package github.yuanbaoqiang.transmission.client;
 
 
-import github.yuanbaoqiang.remoting.transport.endec.JsonSerializer;
-import github.yuanbaoqiang.remoting.transport.endec.MyDecode;
-import github.yuanbaoqiang.remoting.transport.endec.MyEncode;
+import github.yuanbaoqiang.common.endec.JsonSerializer;
+import github.yuanbaoqiang.common.endec.MyDecode;
+import github.yuanbaoqiang.common.endec.MyEncode;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -22,6 +22,7 @@ public class NettyClientInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
+        logger.info("初始化Channel");
 //        // 每一个channel只有一个pipeline
 //        ChannelPipeline pipeline = socketChannel.pipeline();
 //        // 消息格式：[长度][消息体]
@@ -46,8 +47,9 @@ public class NettyClientInitializer extends ChannelInitializer<SocketChannel> {
         logger.info("添加自定义编码器");
         pipeline.addLast(new MyDecode());
         // 编码需要传入序列化器，这里是json，还支持ObjectSerializer，也可以自己实现其他的
+        logger.info("添加JSON序列化");
         pipeline.addLast(new MyEncode(new JsonSerializer()));
         pipeline.addLast(new NettyClientHandler());
-        logger.info("添加自定义组件完成");
+        logger.info("添加自定义组件成功");
     }
 }

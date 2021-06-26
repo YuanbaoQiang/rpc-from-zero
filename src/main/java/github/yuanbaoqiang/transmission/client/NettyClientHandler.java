@@ -1,6 +1,7 @@
-package github.yuanbaoqiang.remoting.transport.nio.client;
+package github.yuanbaoqiang.transmission.client;
 
-import github.yuanbaoqiang.remoting.dto.RpcResponse;
+
+import github.yuanbaoqiang.common.dto.RpcResponse;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
@@ -16,8 +17,8 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<RpcResponse>
     private static Logger logger = LoggerFactory.getLogger(NettyRpcClient.class);
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcResponse msg) throws Exception {
-        // 接收到response, 给channel设计别名，让sendRequest里读取response
         logger.info("执行channelRead0方法");
+        // 接收到response, 给channel设计别名，让sendRequest里读取response
         AttributeKey<RpcResponse> key = AttributeKey.valueOf("RpcResponse");
         ctx.channel().attr(key).set(msg);
         ctx.channel().close();
